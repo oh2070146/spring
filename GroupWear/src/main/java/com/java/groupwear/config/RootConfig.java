@@ -13,18 +13,18 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@ComponentScan(basePackages= {"org.zerock.service"})
-@MapperScan(basePackages= {"org.zerock.mapper"})
+@ComponentScan(basePackages= {"com.java.groupwear.service"})
+@MapperScan(basePackages= {"com.java.groupwear.mapper"})
 public class RootConfig {
 
   @Bean
   public DataSource dataSource() {
     HikariConfig hikariConfig = new HikariConfig();
     hikariConfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
-    hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:XE");
+    hikariConfig.setJdbcUrl("jdbc:log4jdbc:oracle:thin:@localhost:1521:ORCL");
 
-    hikariConfig.setUsername("book_ex");
-    hikariConfig.setPassword("book_ex");
+    hikariConfig.setUsername("scott");
+    hikariConfig.setPassword("tiger");
 
     hikariConfig.setMinimumIdle(5);
     // test Query
